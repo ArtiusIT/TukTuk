@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.tuktuk.dmth.tuktuk.Activity.Registration;
+import com.tuktuk.dmth.tuktuk.Database.DatabaseHandler;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        DatabaseHandler db=new DatabaseHandler(getApplicationContext());
         if(enableServices()){
             proceedToNextView();
         }
@@ -77,7 +78,7 @@ public class SplashActivity extends AppCompatActivity {
                     // Thread will sleep for 3 seconds
                     sleep(3*1000);
 
-                    // After 5 seconds redirect to another intent
+                    // After 3 seconds redirect to another intent
                     Intent i=new Intent(getBaseContext(),Registration.class);
                     startActivity(i);
 
@@ -107,7 +108,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         boolean isrequirementdone=checkforGps();
-        isrequirementdone=isrequirementdone && checkforGps();
+        isrequirementdone=isrequirementdone && isNetworkConnected();
         return isrequirementdone;
     }
     private boolean checkforGps() {
