@@ -12,4 +12,33 @@
     tools:context="com.tuktuk.dmth.tuktuk.Activity.Registration"
     tools:showIn="@layout/activity_registration">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/icon"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/mobileno_register_edittext"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:hint="Mobile Number"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/next_button_reg"
+        android:layout_below="@+id/mobileno_register_edittext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:textAlignment="center" />
+
 </RelativeLayout>
