@@ -18,27 +18,32 @@
         android:id="@+id/logoview"
         android:src="@drawable/tuktuklogo" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/imageback"
-        android:id="@+id/profilepic"
-        android:src="@drawable/defuser"
-        android:layout_below="@+id/logoview"
-        android:layout_centerHorizontal="true" />
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_below="@+id/logoview"
     android:layout_centerVertical="true"
     android:layout_centerHorizontal="true"
     android:id="@+id/relativeLayout">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/imageback"
+        android:id="@+id/profilepic"
+        android:src="@drawable/defuser"
+
+        android:layout_centerHorizontal="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editetxt_name"
-        android:layout_alignParentTop="true"
+
+        android:layout_below="@+id/profilepic"
         android:layout_centerHorizontal="true"
         android:hint="Enter Name" />
 
