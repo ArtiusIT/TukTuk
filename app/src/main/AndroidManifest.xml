@@ -32,6 +32,10 @@
         <activity
             android:name=".Activity.PinCodeVerifyActivity"
             android:label="@string/title_activity_pin_code_verify"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.DetailsCapture"
+            android:label="@string/title_activity_details_capture"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
