@@ -2,58 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.tuktuk.dmth.tuktuk.Activity.PinCodeVerifyActivity"
     tools:showIn="@layout/activity_pin_code_verify">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Please enter your verification code that was sent to"
-        android:id="@+id/text_verfy_enter_message_lbl"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Verifycode_edit_text"
-        android:layout_below="@+id/text_verfy_enter_message_lbl"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:hint="Enter Pin no"
-        android:textAlignment="center" />
+        android:paddingTop="10dp"
+        android:layout_marginBottom="30dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DONE"
-        android:id="@+id/btn_done"
-        android:layout_below="@+id/Verifycode_edit_text"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="30dp"
+            android:text="Please enter your verification code that was sent to"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resend"
-        android:id="@+id/btn_resend"
-        android:layout_below="@+id/btn_done"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Number"
-        android:id="@+id/btn_chnage_number"
-        android:layout_below="@+id/btn_resend"
-        android:layout_centerHorizontal="true" />
+        android:paddingTop="190dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <!--  Pin Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_pin_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Pin No" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_next_userdetails"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:background="#57A6FF"
+            android:text="NEXT"/>
+
+        <TextView android:id="@+id/link_resend"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="RESEND"
+            android:gravity="center"
+            android:textSize="16dip"/>
+
+        <TextView android:id="@+id/link_change_no"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="CHANGE NUMBER"
+            android:gravity="center"
+            android:textSize="16dip"/>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
