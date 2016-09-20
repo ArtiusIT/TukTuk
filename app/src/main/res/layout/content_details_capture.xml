@@ -12,10 +12,16 @@
         android:paddingTop="10dp"
         android:layout_marginBottom="30dp">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/tuktuklogo"/>
+            android:layout_marginTop="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="Create an account to get Started"
+            android:textAlignment="center"
+            android:textSize="35dp"/>
 
 
     </LinearLayout>
@@ -24,7 +30,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="180dp"
+        android:paddingTop="150dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
@@ -89,22 +95,6 @@
             android:padding="12dp"
             android:background="#57A6FF"
             android:text="NEXT"/>
-
-        <TextView android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Register Now"
-            android:gravity="center"
-            android:textSize="16dip"/>
-
-        <TextView android:id="@+id/link_fogotpassword"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Forgot Password"
-            android:gravity="center"
-            android:textSize="16dip"/>
 
     </LinearLayout>
 
