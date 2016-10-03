@@ -15,8 +15,8 @@ import com.tuktuk.dmth.tuktuk.R;
 public class PinCodeVerifyActivity extends AppCompatActivity {
     TextView verify_code_enter_msg_label;
     Button btn_done;
-    Button btn_resend;
-    Button btn_change_number;
+    TextView btn_resend;
+    TextView btn_change_number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +24,10 @@ public class PinCodeVerifyActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btn_done=(Button)findViewById(R.id.btn_done);
-        btn_resend=(Button)findViewById(R.id.btn_resend);
-        btn_change_number=(Button)findViewById(R.id.btn_chnage_number);
-        verify_code_enter_msg_label=(TextView)findViewById(R.id.text_verfy_enter_message_lbl);
+        btn_done=(Button)findViewById(R.id.btn_next_userdetails);
+        btn_resend= (TextView) findViewById(R.id.link_resend);
+        btn_change_number=(TextView)findViewById(R.id.link_change_no);
+        verify_code_enter_msg_label=(TextView)findViewById(R.id.input_pin_no);
         String mobileno=getIntent().getStringExtra("MobileNo");
         verify_code_enter_msg_label.setText("Please enter your verification code that was sent to "+mobileno);
 

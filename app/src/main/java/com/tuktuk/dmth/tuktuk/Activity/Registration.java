@@ -27,8 +27,8 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        nextbtn_registration=(Button)findViewById(R.id.next_button_reg);
-        mobileNo_registration_input=(EditText)findViewById(R.id.mobileno_register_edittext);
+        nextbtn_registration=(Button)findViewById(R.id.btn_next_userreg);
+        mobileNo_registration_input=(EditText)findViewById(R.id.input_mobile_no);
 
         nextbtn_registration.setEnabled(false);
         mobileNo_registration_input.addTextChangedListener(new TextWatcher() {
