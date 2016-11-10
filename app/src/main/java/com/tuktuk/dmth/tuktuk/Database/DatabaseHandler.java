@@ -14,7 +14,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     public DatabaseHandler(Context context) {
-        super(context, "tuktuk.db", null, 8);
+        super(context, "tuktuk.db", null, 9);
     }
 
     @Override
@@ -51,6 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         values.put("keyvalue", "akm_morning");
         db.insert("metadata", null, values);
+
         values.put("keyvalue", "akm_night");
         db.insert("metadata", null, values);
         values.put("keyvalue", "wait_morning");
@@ -72,7 +73,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put("keyvalue", "lastauthcode");
         values.put("value", "");
         db.insert("metadata", null, values);
-
+        values.put("keyvalue", "userid");
+        values.put("value", "");
+        db.insert("metadata", null, values);
 
 
 

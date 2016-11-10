@@ -71,8 +71,10 @@ public class Registration extends AppCompatActivity {
         setSupportActionBar(toolbar);
         nextbtn_registration = (Button) findViewById(R.id.next_button_reg);
         mobileNo_registration_input = (EditText) findViewById(R.id.mobileno_register_edittext);
+
         Datarceiver=new DataReceiver();
         db=new DatabaseHandler(getApplicationContext());
+
         nextbtn_registration.setEnabled(false);
         mobileNo_registration_input.addTextChangedListener(new TextWatcher() {
             @Override
@@ -102,8 +104,6 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog = ProgressDialog.show(Registration.this, "Submitting", "Please wait...", true);
-
-
                 //jsonObject.put("loguname", mobileNo_registration_input.getText());
                 HashMap<String, String> inpmessage = new HashMap<String, String>();
 
@@ -171,7 +171,8 @@ public class Registration extends AppCompatActivity {
 
                 try {
                     JSONObject rep=new JSONObject(intent.getStringExtra("result"));
-                    db.updateMetadata("lastauthcode",rep.getString("authenticateCode"));
+                    db.updateMetadata("lastauthcode", rep.getString("authenticateCode"));
+                    db.updateMetadata("userid",rep.getString("userID"));
                     startActivity(pincodeverifyactivityintent);
 
                 } catch (JSONException e) {

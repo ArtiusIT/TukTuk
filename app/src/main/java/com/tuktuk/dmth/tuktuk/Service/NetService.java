@@ -248,12 +248,14 @@ public class NetService extends Service {
         @Override
         protected void onPostExecute(JSONObject s) {
             super.onPostExecute(s);
-            Log.e("Service",s.toString());
+
             Intent dataIntent = new Intent("tukme.tcpdirectcall.result");//ToDo add intent filetr name
-            if(s==null){
+            if(s==null || s.equals("{}")){
                 dataIntent.putExtra("status",MetaData.MSG_Fail);
+                Log.e("Service","NULL");
             }
             else {
+                Log.e("Service",s.toString());
                 dataIntent.putExtra("status",MetaData.MSG_Done);
                 try {
                     dataIntent.putExtra("result",s.getString("resultobject"));
