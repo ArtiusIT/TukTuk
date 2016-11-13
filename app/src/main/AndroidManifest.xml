@@ -26,9 +26,15 @@
             </intent-filter>
         </activity>
         <activity
+
+
             android:name=".Activity.Registration"
             android:label="@string/title_activity_registration"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+                <intent-filter>
+                    <action android:name="tukme.tcpdirectcall.result"/>
+                </intent-filter>
+        </activity>>
         <activity
             android:name=".Activity.PinCodeVerifyActivity"
             android:label="@string/title_activity_pin_code_verify"
@@ -37,6 +43,8 @@
             android:name=".Activity.DetailsCapture"
             android:label="@string/title_activity_details_capture"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <service android:name=".Service.NetService"></service>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ import android.view.MenuItem;
 
 import com.tuktuk.dmth.tuktuk.Activity.Registration;
 import com.tuktuk.dmth.tuktuk.Database.DatabaseHandler;
+import com.tuktuk.dmth.tuktuk.Utils.MetaData;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -36,6 +37,7 @@ public class SplashActivity extends AppCompatActivity {
 
         }
 
+        MetaData.initiateMetadaList();
 
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
