@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Verifycode_edit_text"
         android:layout_below="@+id/text_verfy_enter_message_lbl"
+
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:hint="Enter Pin no"

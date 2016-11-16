@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.tuktuk.dmth.tuktuk.Database.DatabaseHandler;
 import com.tuktuk.dmth.tuktuk.NetServiceinterface;
 import com.tuktuk.dmth.tuktuk.R;
 import com.tuktuk.dmth.tuktuk.Service.NetService;
@@ -45,7 +46,7 @@ public class Registration extends AppCompatActivity {
     ProgressDialog dialog;
 
     NetServiceinterface mService;
-
+    DatabaseHandler db;
     private ServiceConnection serviceConnection=new ServiceConnection() {
 
         @Override
@@ -71,7 +72,7 @@ public class Registration extends AppCompatActivity {
         nextbtn_registration = (Button) findViewById(R.id.next_button_reg);
         mobileNo_registration_input = (EditText) findViewById(R.id.mobileno_register_edittext);
         Datarceiver=new DataReceiver();
-
+        db=new DatabaseHandler(getApplicationContext());
         nextbtn_registration.setEnabled(false);
         mobileNo_registration_input.addTextChangedListener(new TextWatcher() {
             @Override
@@ -167,7 +168,16 @@ public class Registration extends AppCompatActivity {
 
                 Intent pincodeverifyactivityintent = new Intent(Registration.this, PinCodeVerifyActivity.class);
                 pincodeverifyactivityintent.putExtra("phone1", mobileNo_registration_input.getText().toString());
-                startActivity(pincodeverifyactivityintent);
+
+                try {
+                    JSONObject rep=new JSONObject(intent.getStringExtra("result"));
+                    db.updateMetadata("lastauthcode",rep.getString("authenticateCode"));
+                    startActivity(pincodeverifyactivityintent);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
 
             }
             if(errorcode== MetaData.MSG_Fail){//ToDo say what is the error
