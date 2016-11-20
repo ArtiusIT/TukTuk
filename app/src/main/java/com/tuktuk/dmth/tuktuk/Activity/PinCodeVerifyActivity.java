@@ -146,6 +146,8 @@ public class PinCodeVerifyActivity extends AppCompatActivity {
                     JSONObject rep=new JSONObject(intent.getStringExtra("result"));
 
                     if(rep.getString("auth").equals("true")) {
+
+                        db.updateMetadata("logged","true");
                         startActivity(DetailsCapture);
                     }
                     else{
